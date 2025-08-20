@@ -2,16 +2,23 @@
     As many as there are letters in the alphabet being used
 
 2. What is ROT13 and what has the "import this" statement in Python got to do with it?
+    ROT13 is to rotate
 
 3. Vigenère cipher are normally harder to break than Caesar cipher. When is this not the case?
+    When the key is short and the text is long.
 
 4. Who was Vigenère?
     a. When did he live?
+        1523-1596
     b. What other cipher is he known for having invented?
+        Vigenère also created a stronger auto-key cipher.
 
 5. Whast are the strengths and weaknesses of the Vernam cipher?
+    Strength: one-time pad
+    Weakness: can only use the key once
 
 6. There is a special case where the Vigenère cipher and the Vernam cipher are the same. What is the condition for this to be true?
+
 
 7. Vernam: (Vernam.py)
     a. m="Security is important"
@@ -25,18 +32,22 @@
 
 10. For the Caesar and Vernam cipher, knowing a (plaintedxt,ciphertext) pair also implies that you know the key.
     a. Can you think of a way around this severe problem?
+        for Caesar, don't use it, for Vernam make sure to only use a pad once.
 
 12. What is a true random bit generator?
     A true random bit generator is a generator that actually generates random bits, as in the next bit generated has no relationship with earlier generated bits, and it has no bias.
 
 13. How can you construct a true random bit generator? What are the caveats?
+    To construct a true random generator, you need a source that is actually random, often something physical in nature like a radioactive process
 
 14. What is the "next-bit" test?
+    The next-bit test is that if you have a sequence of random bits, you should not be able to guess the next bit with a chance signficantly higher than 50%
 
 15. What is a CSPRBG?
-    A CSPRBG is a Cryptographically Secure Pseudo Random Big Generator, and is a bit generator that creates bits psuedo randomly as in it is not random and done deterministically, but is still Cryptographically secure.
+    A CSPRBG is a Cryptographically Secure Pseudo Random Bit Generator, and is a bit generator that creates bits psuedo randomly as in it is not random and done deterministically, but is still Cryptographically secure.
 
 16. The Fortuna generator should be based on what kind of cipher primitive?
+    block-cipher primitive
 
 17. Fortuna: What are the "pools of entropy"?
 
@@ -52,11 +63,13 @@
     c. Switch from RANDU to methods from the secrets module. Ensure that there are no planes.
 
 21. Mention 3 different types of nonces.
+    pseudo-random, serial, time-stamp
 
 22. When is it acceptable to use a time-stamp nonce? (and when is that not a good idea)
+    When the resolution is high enough, it's not a good idea if people are trying to
 
 23. When is brute-force not prectical?
-    Brute-force is not practical when it is infeasable to crack within a reasonable amount of time.
+    Brute-force is not practical when it is computationally infeasable.
 
 24. What is pre-computation and why is it useful?
     Pre-computation is used in brute-force attacks to create a table on already computed passwords so that when you try to brute-force something you don't have to do the entire job all over again.
@@ -66,9 +79,11 @@
 26. In GSM, the key Kc is 64 bit long. Is that a problem?
     The key being 64 bit long is a problem as a number that is only 64 bit long is not very difficult to brute-force with modern hardware.
 
-27. What os a ley-deriving key?
+27. What is a key-deriving key?
+    A key-deriving key is a key that is made from another key.
 
 28. What is the advantage of PFS? Does it always matter?
+    Perfect forward secrecy. Even if an attacker breaks a part of the system, they won't be able to break anything after that point.
 
 29. Obfuscation is often used in malware. What is the Norwegian translation of malware?
     Skadevare
@@ -79,29 +94,31 @@
 31. Read the article "Hide and Seek: An Introduction to Steganography". Check out what it says about jsteg.
 
 32. Why would one use Steganography as a hiding method?
+    If you want to hide that there is any information that is being hidden.
 
 33. Why will one normally also encrypt the contents that is being hidden with Steganographic methods?
+    Because there are tools that can find if there is information hidden with Steganographic methods.
 
 34. "Pwn2hide.jpg" is a copy of "Pwn2own.jpg", and it contains a hidden message. Use jsteg to find the message. What is that message?
 
-35. THe message from Q-34 is a famous quote. What is the story?
+35. The message from Q-34 is a famous quote. What is the story?
 
 36. What is a passive attack?
+    A passive attack is surveiling if communication is happeningand logging it.
 
 37. What is  the difference between a chosen-plaintext attack and a known-plaintext attack?
 
+
 38. What is "Schneier's law"?
+    It's not hard to create a cryptographic system that you yourself can't crack. It's harder to create a system that someone else can't crack.
 
 39. Can you mention a theat modelling method?
+    STRIDE
 
-40. It was mentioned that risk is sometimes equated with probability x impact. This poses a problem for
-how to evaluate probability. It is common to use statistical models, and maybe the famous bell
-shape of the normal deviation. But, how do you know the distribution of incidents for new systems?
-Incidents are potentially infrequent events, and then you don’t necessarily have enough data point
-to determine the distribution. Thus, you don’t really know which distribution to used. This can have
-consequences. See https://en.wikipedia.org/wiki/Black_swan_theory for more information.
+40. It was mentioned that risk is sometimes equated with probability x impact. This poses a problem for how to evaluate probability. It is common to use statistical models, and maybe the famous bell shape of the normal deviation. But, how do you know the distribution of incidents for new systems? Incidents are potentially infrequent events, and then you don’t necessarily have enough data point to determine the distribution. Thus, you don’t really know which distribution to used. This can have consequences. See https://en.wikipedia.org/wiki/Black_swan_theory for more information.
 
 41. What is meant by containment?
+
 
 42. What is meant by "accepting the risk"?
 
